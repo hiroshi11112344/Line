@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[line] # この1行を追加
+         # TwitterやFacebookログインなども導入する場合は %i[line] の配列に追加 してください。
+        # 例： :omniauth_providers: %i[line twitter facebook]）
          def social_profile(provider)
           social_profiles.select { |sp| sp.provider == provider.to_s }.first
         end

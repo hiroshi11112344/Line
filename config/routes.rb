@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+  root to: "homes#index"
   devise_for :users, controllers: {
     omniauth_callbacks: "omniauth_callbacks"
   }
+
+  get "/home/index", to: 'homes#index', as: :expendable_items
+  
+  
+
+   #  https://c13d-240a-61-6263-5611-5943-dd77-481f-e438.ngrok-free.app/users/sign_in
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
