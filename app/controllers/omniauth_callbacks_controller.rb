@@ -18,7 +18,6 @@ class OmniauthCallbacksController < ApplicationController
       sign_in(:user, @profile)
     end
     #ログイン後のflash messageとリダイレクト先を設定
-    flash[:notice] = "ログインしました"
     redirect_to expendable_items_path
   end
 
