@@ -1,0 +1,48 @@
+/* 画面中央に配置 */
+.sessions-new-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 画面全体の高さを使用 */
+}
+
+/* 四角いコンテナ（ボタンが中央に来るよう調整） */
+.sessions-new-box {
+  background-color: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+  width: 65%;
+  max-width: 500px;
+  height: 50vh; /* コンテナの高さを70%に */
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 🔹 これでボタンが中央に配置される！ */
+  align-items: center;
+}
+
+/* LINEログインボタン */
+.sessions-new-btn {
+  width: 100%; /* 親要素の80% */
+  max-width: 500px;
+  background-color: #04e863;
+  color: white;
+  padding: 40px;
+  border-radius: 50px;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  display: flex; /*  これでボタンの中のテキストも中央揃え */
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* ホバー時のエフェクト */
+.sessions-new-btn:hover {
+  background-color: #03c654;
+}
