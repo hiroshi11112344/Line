@@ -25,4 +25,5 @@ class User < ApplicationRecord
           self.raw_info = raw_info.to_json
           self.save!
         end
+  has_one :profile, dependent: :destroy # 🔹 1対1の関係（User は 1つの Profile を持つ）
 end

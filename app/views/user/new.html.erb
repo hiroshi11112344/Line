@@ -1,0 +1,31 @@
+ <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+<body>
+  <div class="sessions-new-container">
+    <div class="sessions-new-box">
+
+
+
+
+      <% if user_signed_in? %>
+        <p>こんにちは、<%= current_user.name %> さん</p>
+      <%end%> 
+      <%= form_with model: @user, url: users_path, method: :post do |f| %># url: users_pathは現時点で今開いてるURLページの事　こちらをpostでルーティングに投げる
+        <div class="field">
+          <%= f.label :name, "名前" %>
+          <%= f.text_field :name, placeholder: "名前を入力してください", required: true %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "登録", class: "btn btn-primary" %>
+        </div>
+      <% end %>    
+
+
+
+
+
+
+
+    </div>
+  </div>
+</body>
