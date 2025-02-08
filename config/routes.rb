@@ -4,11 +4,11 @@ Rails.application.routes.draw do
     omniauth_callbacks: "omniauth_callbacks"
   }, skip: [:passwords, :registrations] #明日おかしかったら消す
 
-  get "/home/user/new", to: 'user#new', as: :expendable_items
-  
+  get "/user/new", to: 'user#new', as: :expendable_items
+  post "/user", to: 'user#create', as: :users
   
 
-  #  https://be0d-153-212-244-139.ngrok-free.app/users/sign_in
+  #  https://2528-153-137-76-189.ngrok-free.app/users/sign_in
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
