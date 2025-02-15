@@ -9,14 +9,25 @@
       <% if user_signed_in? %>
         <p>こんにちは、<%= current_user.name %> さん</p>
       <%end%> 
-      <%= form_with model: @user, url: users_path, method: :post do |f| %># url: users_pathは現時点で今開いてるURLページの事　こちらをpostでルーティングに投げる
+      <%= form_with model: @user, url: users_path, method: :post do |f| %>
+
+
+        <p>画像 初期デフォルト</p>
+
         <div class="field">
-          <%= f.label :name, "名前" %>
           <%= f.text_field :name, placeholder: "名前を入力してください", required: true %>
         </div>
+        <div class="birthdate-wrapper">
+          <div class="birthdate-box">
+            <%= f.text_field :birth_year, placeholder: "   ", pattern: "\d{4}", required: true, class: "birth-input"%><span>年</span>
+            <%= f.text_field :birth_month, placeholder: "  ", pattern: "\d{1,2}", required: true, class: "birth-input"%><span>月</span>
+            <%= f.text_field :birth_day, placeholder: "  ", pattern: "\d{1,2}", required: true, class: "birth-input"%><span>日</span>
+          </div>
+        </div>
+
 
         <div class="actions">
-          <%= f.submit "登録", class: "btn btn-primary" %>
+          <%= f.submit "確認", class: "btn btn-primary" %>
         </div>
       <% end %>    
 
