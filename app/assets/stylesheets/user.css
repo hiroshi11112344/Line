@@ -1,4 +1,3 @@
-/* 全体を中央に配置 */
 .birthdate-wrapper {
   display: flex;
   justify-content: center;  /* 横方向の中央揃え */

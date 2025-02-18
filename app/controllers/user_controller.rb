@@ -20,7 +20,7 @@ class UserController < ApplicationController
 
   def user_params
     # 新規登録するときに登録されてきたデータをまず取得する
-    params.require(:user).permit(:name, :birthdate)
+    params.require(:user).permit(:name, :birthdate, :profile_image)
     # params.require(:user).permit(:name, :email) もし名前以外を追加したい場合は隣に値を追加　例えばメールの場合はこう書く、これからフォームウィズの方でも追加していくと良い
 
   end
