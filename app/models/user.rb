@@ -6,10 +6,10 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[line] # この1行を追加
          # TwitterやFacebookログインなども導入する場合は %i[line] の配列に追加 してください。　
         # 例： :omniauth_providers: %i[line twitter facebook]）
-         def social_profile(provider)
+        def social_profile(provider)
           social_profiles.select { |sp| sp.provider == provider.to_s }.first
         end
-      
+
         def set_values(omniauth)
           return if provider.to_s != omniauth["provider"].to_s || uid != omniauth["uid"]
           credentials = omniauth["credentials"]
@@ -19,6 +19,9 @@ class User < ApplicationRecord
           access_secret = credentials["secret"]
           credentials = credentials.to_json
           name = info["name"]
+          self.image = omniauth["info"]["image"] if self.image.blank? # 🔹 LINEのプロフィール画像があれば保存
+          self.save!
+          
         end
       
         def set_values_by_raw_info(raw_info)

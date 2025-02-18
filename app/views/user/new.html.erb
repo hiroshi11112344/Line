@@ -2,17 +2,17 @@
 <body>
   <div class="sessions-new-container">
     <div class="sessions-new-box">
-
-
-
-
       <% if user_signed_in? %>
         <p>こんにちは、<%= current_user.name %> さん</p>
+        <img src="<%= current_user.image %>" alt="LINEプロフィール画像" width="100">
       <%end%> 
-      <%= form_with model: @user, url: users_path, method: :post do |f| %>
+      
+      <%= form_with model: @user, url: users_path, method: :post, multipart: true do |f| %>
+        <p>画像 初期デフォルト Lineから持ってくる</p>
 
-
-        <p>画像 初期デフォルト</p>
+        <div class="field_image">
+          <%= f.file_field :profile_image, accept: "image/*" %>
+        </div>
 
         <div class="field">
           <%= f.text_field :name, placeholder: "名前を入力してください", required: true %>
@@ -25,17 +25,10 @@
           </div>
         </div>
 
-
         <div class="actions">
           <%= f.submit "確認", class: "btn btn-primary" %>
         </div>
       <% end %>    
-
-
-
-
-
-
 
     </div>
   </div>
