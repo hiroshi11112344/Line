@@ -28,3 +28,17 @@
 .birthdate-box span {
   font-size: 18px;
 }
+
+.profile-image {
+  width: 150px;  /* 画像の幅 */
+  height: 150px; /* 画像の高さ */
+  border-radius: 50%; /* 🔹 画像を円形にする */
+  object-fit: cover; /* 🔹 画像をトリミングして中央に表示 */
+  display: block;
+  margin-left: 10%
+}
+
+.profile-name {
+  transform: translateY(-150%);
+  margin-left: 50%;
+}

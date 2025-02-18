@@ -1,11 +1,12 @@
 class Profile < ApplicationRecord
   belongs_to :user
+
   #before_create は、新しいレコードが create される前に実行されるコールバック
   before_create :generate_unique_id #ランダム８桁のID
 
-  serialize :friend_requests, Array # 配列を保存
+  serialize :friend_requests, coder: JSON# 配列を保存
 
-  serialize :friends, Array # 配列を保存
+  serialize :friends, coder: JSON 
 
   validates :unique_id, uniqueness: true #ランダム８桁のID unique_id の値がデータベース内で一意 (ユニーク) であることを保証 
 

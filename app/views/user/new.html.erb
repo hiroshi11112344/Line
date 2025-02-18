@@ -3,20 +3,12 @@
   <div class="sessions-new-container">
     <div class="sessions-new-box">
       <% if user_signed_in? %>
-        <p>こんにちは、<%= current_user.name %> さん</p>
-        <img src="<%= current_user.image %>" alt="LINEプロフィール画像" width="100">
+        <img src="<%= current_user.image %>" alt="LINEプロフィール画像" class="profile-image">
+        <div class="profile-name"><%= current_user.name %> さん</div>
       <%end%> 
       
       <%= form_with model: @user, url: users_path, method: :post, multipart: true do |f| %>
-        <p>画像 初期デフォルト Lineから持ってくる</p>
 
-        <div class="field_image">
-          <%= f.file_field :profile_image, accept: "image/*" %>
-        </div>
-
-        <div class="field">
-          <%= f.text_field :name, placeholder: "名前を入力してください", required: true %>
-        </div>
         <div class="birthdate-wrapper">
           <div class="birthdate-box">
             <%= f.text_field :birth_year, placeholder: "   ", pattern: "\d{4}", required: true, class: "birth-input"%><span>年</span>
