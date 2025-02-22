@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post "/user", to: 'user#create', as: :users
   
 
-  #  https://3057-153-212-244-139.ngrok-free.app/users/sign_in
+  #  https://5d98-153-212-244-139.ngrok-free.app/users/sign_in
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

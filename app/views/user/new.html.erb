@@ -2,6 +2,7 @@
 <body>
   <div class="sessions-new-container">
     <div class="sessions-new-box">
+      <h5>新規登録</5>
       <% if user_signed_in? %>
         <img src="<%= current_user.image %>" alt="LINEプロフィール画像" class="profile-image">
         <div class="profile-name"><%= current_user.name %> さん</div>
@@ -21,7 +22,7 @@
           <%= f.submit "確認", class: "btn btn-primary" %>
         </div>
       <% end %>    
-
+      
     </div>
   </div>
 </body>

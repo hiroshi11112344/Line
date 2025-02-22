@@ -42,3 +42,19 @@
   transform: translateY(-150%);
   margin-left: 50%;
 }
+
+.btn.btn-primary{
+  width: 90%; /* 🔹 幅を親要素の70%に */
+  max-width: 400px;
+  min-width: 150px;
+  display: flex; /* 🔹 フレックスボックスを適用 */
+  justify-content: center; /* 🔹 テキストを中央揃え */
+  margin: auto; /* 🔹 横方向の中央配置 */
+  background-color: #b2d8b2; /* 🔹 薄緑色 */
+  color: white; /* 🔹 フォントの色を白 */
+  border: none; /* 🔹 ボーダーを削除 */
+  border-radius: 8px; /* 🔹 角を丸く */
+  cursor: pointer; /* 🔹 ホバー時にカーソルをポインターに */
+  position: relative;
+  top: 4vh; /* 🔹 画面の高さの4%分下げる */
+}
