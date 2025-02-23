@@ -9,10 +9,10 @@ class OmniauthCallbacksController < ApplicationController
   def basic_action
     @omniauth = request.env["omniauth.auth"]
     if @omniauth.present?
-      @profile = User.find_or_initialize_by(provider: @omniauth["provider"], uid: @omniauth["uid"])
-      if @profile.email.blank?
+      @user = User.find_or_initialize_by(provider: @omniauth["provider"], uid: @omniauth["uid"])
+      if @user.email.blank?
         email = @omniauth["info"]["email"] ? @omniauth["info"]["email"] : "#{@omniauth["uid"]}-#{@omniauth["provider"]}@example.com"
-        @profile = current_user || User.create!(
+        @user = current_user || User.create!(
         provider: @omniauth["provider"], 
         uid: @omniauth["uid"], email: email, 
         name: @omniauth["info"]["name"], 
@@ -21,11 +21,16 @@ class OmniauthCallbacksController < ApplicationController
         )
         
       end
-      @profile.set_values(@omniauth)
-      sign_in(:user, @profile)
+      @user.set_values(@omniauth)
+      sign_in(:user, @user)
     end
     #ログイン後のflash messageとリダイレクト先を設定
-    redirect_to expendable_items_path
+    if @user.profile.id?
+      redirect_to confirm_user_path
+    else
+      redirect_to expendable_items_path
+    end
+
   end
 
   def fake_email(uid, provider)
