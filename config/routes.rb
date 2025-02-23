@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
+
   root to: "homes#index"
+  
   devise_for :users, controllers: {
     omniauth_callbacks: "omniauth_callbacks"
   }, skip: [:passwords, :registrations] #明日おかしかったら消す
 
   get "/user/new", to: 'user#new', as: :expendable_items
-  post "/user", to: 'user#create', as: :users
-  
 
-  #  https://5d98-153-212-244-139.ngrok-free.app/users/sign_in
+  post "/user", to: 'user#create', as: :users
+
+  get "/user/confirm", to: 'user#confirm', as: :confirm_user 
+
+  #  https://081c-153-137-38-28.ngrok-free.app/users/sign_in
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
