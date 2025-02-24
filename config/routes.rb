@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get "/user/confirm", to: 'user#confirm', as: :confirm_user 
 
-  #  https://081c-153-137-38-28.ngrok-free.app/users/sign_in
+  #  https://ffe9-153-212-244-139.ngrok-free.app/users/sign_in
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
