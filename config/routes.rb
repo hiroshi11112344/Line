@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   patch 'users/update_or_create', to: 'user#update_or_create', as: 'update_or_create_user'
 
-  get "/user/confirm", to: 'user#confirm', as: :confirm_user 
+  get "/user/confirm", to: 'user#confirm', as: :confirm_user
 
   #  https://c151-153-212-244-139.ngrok-free.app/users/sign_in
   
