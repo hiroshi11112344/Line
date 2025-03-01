@@ -21,6 +21,7 @@
   height: 100vh; /* 画面全体の高さを使用 */
 }
 
+
 /* 四角いコンテナ（ボタンが中央に来るよう調整） */
 .sessions-new-box {
   background-color: white;
