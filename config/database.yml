@@ -19,8 +19,10 @@ test:
 
 # 本番環境
 # SQLite3を使用しないため、PostgreSQLの設定を記述。
-production:
+pproduction:
   adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  url: <%= ENV["DATABASE_URL"] %>
+  pool: 5
+  database: myapp_production
+  username: myapp
+  password: <%= ENV['DATABASE_PASSWORD'] %>
