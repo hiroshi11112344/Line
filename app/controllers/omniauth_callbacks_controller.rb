@@ -1,6 +1,7 @@
 class OmniauthCallbacksController < ApplicationController
 
   def line
+    Rails.logger.debug "LINE_CLIENT_ID from ENV in controller: #{ENV['LINE_CLIENT_ID']}"
     basic_action
   end
 
@@ -14,7 +15,8 @@ class OmniauthCallbacksController < ApplicationController
         email = @omniauth["info"]["email"] ? @omniauth["info"]["email"] : "#{@omniauth["uid"]}-#{@omniauth["provider"]}@example.com"
         @user = current_user || User.create!(
         provider: @omniauth["provider"], 
-        uid: @omniauth["uid"], email: email, 
+        uid: @omniauth["uid"], 
+        email: email, 
         name: @omniauth["info"]["name"], 
         password: Devise.friendly_token[0, 20], 
         image: @omniauth["info"]["image"]

@@ -9,6 +9,9 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  Rails.logger.debug "LINE_CLIENT_ID from ENV in devise: #{ENV['LINE_CLIENT_ID']}"
+  Rails.logger.debug "LINE_CLIENT_SECRET from ENV in devise: #{ENV['LINE_CLIENT_SECRET']}"
+  
   config.omniauth :line, ENV["LINE_CLIENT_ID"], ENV["LINE_CLIENT_SECRET"]
 
   # The secret key used by Devise. Devise uses this key to generate
