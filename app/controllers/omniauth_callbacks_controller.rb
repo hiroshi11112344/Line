@@ -33,7 +33,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in(:user, @user)
     end
     #ログイン後のflash messageとリダイレクト先を設定
-    if @user.profile.id?
+    if @user.profile&.id.present?
       redirect_to confirm_user_path
     else
       redirect_to expendable_items_path
