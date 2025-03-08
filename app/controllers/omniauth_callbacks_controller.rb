@@ -3,12 +3,18 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def line
     Rails.logger.debug "LINE_CLIENT_ID from ENV in controller: #{ENV['LINE_CLIENT_ID']}"
     basic_action
+    Rails.logger.info "LINE Auth Data: #{request.env['omniauth.auth'].inspect}"
   end
 
   private
   
   def basic_action
     @omniauth = request.env["omniauth.auth"]
+    unless @omniauth
+      Rails.logger.error "OmniAuth Auth Hash is NIL!"
+      redirect_to root_path, alert: "LINE認証に失敗しました。"
+      return
+    end
     if @omniauth.present?
       @user = User.find_or_initialize_by(provider: @omniauth["provider"], uid: @omniauth["uid"])
       if @user.email.blank?
