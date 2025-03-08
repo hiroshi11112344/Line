@@ -1,0 +1,82 @@
+.birthdate-wrapper {
+  display: flex;
+  justify-content: center;  /* 横方向の中央揃え */
+  align-items: center;      /* 縦方向の中央揃え */
+  width: 100%;
+  margin-top: 20px;
+}
+
+
+/* 年・月・日を横並びにする */
+.birthdate-box {
+  display: flex;
+  gap: 8px; /* 各ボックスの間隔 */
+  align-items: center;
+}
+
+/* 正方形の入力ボックス */
+.birth-input {
+  width: 50px;  /* 幅を固定 */
+  height: 50px; /* 高さを固定 */
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-color: white;
+}
+
+/* 「年」「月」「日」のラベル */
+.birthdate-box span {
+  font-size: 18px;
+}
+
+.profile-image {
+  width: 150px;  /* 画像の幅 */
+  height: 150px; /* 画像の高さ */
+  border-radius: 50%; /* 🔹 画像を円形にする */
+  object-fit: cover; /* 🔹 画像をトリミングして中央に表示 */
+  display: block;
+  margin-left: 10%
+}
+
+.profile-name {
+  transform: translateY(-150%);
+  margin-left: 50%;
+}
+
+.btn.btn-primary{
+  width: 90%; /* 🔹 幅を親要素の70%に */
+  max-width: 400px;
+  min-width: 150px;
+  display: flex; /* 🔹 フレックスボックスを適用 */
+  justify-content: center; /* 🔹 テキストを中央揃え */
+  margin: auto; /* 🔹 横方向の中央配置 */
+  background-color: #b2d8b2; /* 🔹 薄緑色 */
+  color: white; /* 🔹 フォントの色を白 */
+  border: none; /* 🔹 ボーダーを削除 */
+  border-radius: 5px; /* 🔹 角を丸く */
+  cursor: pointer; /* 🔹 ホバー時にカーソルをポインターに */
+  position: relative;
+  top: 4vh; /* 🔹 画面の高さの4%分下げる */
+  padding: 10px;
+  
+}
+.btn-primary_2 {
+  font-size: 15px;
+}
+
+.btn-secondary {
+  display: block;
+  width: 76%;
+  height: 4%;
+  max-width: 400px;
+  min-width: 150px;
+  margin: 8% auto;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  background: #f8f9fa;
+  color: #000;
+  font-size: 14px;
+}

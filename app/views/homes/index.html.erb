@@ -1,0 +1,10 @@
+<h1>Homes#index</h1>
+<p>Find me in app/views/homes/index.html.erb</p>
+
+<% if user_signed_in? %>
+    <p>こんにちは、<%= current_user.name %> さん</p>
+    <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+  <% else %>
+  <%= link_to "ログイン", new_user_session_path%>
+<%end%>       
+

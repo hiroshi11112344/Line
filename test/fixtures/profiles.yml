@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  unique_id: MyString
+  birthdate: 2025-02-07
+  has_partner: false
+  friend_requests: MyText
+  friends: MyText
+
+two:
+  user: two
+  unique_id: MyString
+  birthdate: 2025-02-07
+  has_partner: false
+  friend_requests: MyText
+  friends: MyText
