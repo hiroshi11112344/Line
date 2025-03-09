@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
 
+  devise_for :users, controllers: {
+    omniauth_callbacks: "omniauth_callbacks"
+  }, skip: [:passwords, :registrations] #明日おかしかったら消す
+
+  authenticated :user do
+    root to: "pages#dashboard", as: :authenticated_root
+  end
+
   # 🔹 Deviseのログインページをrootに設定（エラー回避）
   devise_scope :user do
     root to: "devise/sessions#new"  # ✅ 修正：このブロック内で `root` を定義
   end
-  
-  devise_for :users, controllers: {
-    omniauth_callbacks: "omniauth_callbacks"
-  }, skip: [:passwords, :registrations] #明日おかしかったら消す
 
   get "/user/new", to: 'user#new', as: :expendable_items
 
