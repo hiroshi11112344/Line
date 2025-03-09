@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     root to: "devise/sessions#new"  # ✅ 修正：このブロック内で `root` を定義
   end
-
   
-
   devise_for :users, controllers: {
     omniauth_callbacks: "omniauth_callbacks"
   }, skip: [:passwords, :registrations] #明日おかしかったら消す
