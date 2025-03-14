@@ -14,7 +14,7 @@ class UserController < ApplicationController
 
     @profile.assign_attributes(
       has_partner: params[:profile]&.dig(:has_partner) || false,
-      unique_id: @profile.unique_id || SecureRandom.hex(4),
+      unique_id: @profile&.unique_id || SecureRandom.hex(4),
       friend_requests: params[:profile][:friend_requests] || [],
       friends: params[:profile][:friends] || []
     )   
