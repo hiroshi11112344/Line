@@ -1,5 +1,6 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-# class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  
+  # class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def line
     Rails.logger.debug "LINE_CLIENT_ID from ENV in controller: #{ENV['LINE_CLIENT_ID']}"
     basic_action
@@ -7,7 +8,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   private
-  
+
   def basic_action
     @omniauth = request.env["omniauth.auth"]
     unless @omniauth
@@ -20,25 +21,25 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       if @user.email.blank?
         email = @omniauth["info"]["email"] ? @omniauth["info"]["email"] : "#{@omniauth["uid"]}-#{@omniauth["provider"]}@example.com"
         @user = current_user || User.create!(
-        provider: @omniauth["provider"], 
-        uid: @omniauth["uid"], 
-        email: email, 
-        name: @omniauth["info"]["name"], 
-        password: Devise.friendly_token[0, 20], 
-        image: @omniauth["info"]["image"]
+          provider: @omniauth["provider"], 
+          uid: @omniauth["uid"], 
+          email: email, 
+          name: @omniauth["info"]["name"], 
+          password: Devise.friendly_token[0, 20], 
+          image: @omniauth["info"]["image"]
         )
-        
       end
       @user.set_values(@omniauth)
       sign_in(:user, @user)
+      #　無限ループを防ぐ
+      if request.path != confirm_user_path
+        if @user.profile&.id.present?
+          redirect_to confirm_user_path
+        else
+          redirect_to expendable_items_path
+        end
+      end
     end
-    #ログイン後のflash messageとリダイレクト先を設定
-    if @user.profile&.id.present?
-      redirect_to confirm_user_path
-    else
-      redirect_to expendable_items_path
-    end
-
   end
 
   def fake_email(uid, provider)

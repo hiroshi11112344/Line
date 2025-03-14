@@ -6,7 +6,13 @@ Rails.application.routes.draw do
 
   # 🔹 Deviseのログインページをrootに設定（エラー回避）
   devise_scope :user do
-    root to: "devise/sessions#new"  # ✅ 修正：このブロック内で `root` を定義
+    authenticated :user do
+      root to: "user#confirm", as: :authenticated_root
+    end
+    # 未ログインユーザーは sign_in
+    unauthenticated do
+      root to: "devise/sessions#new"
+    end
   end
 
   get "/user/new", to: 'user#new', as: :expendable_items
@@ -15,7 +21,8 @@ Rails.application.routes.draw do
 
   get "/user/confirm", to: 'user#confirm', as: :confirm_user
 
-  #  https://c151-153-212-244-139.ngrok-free.app/users/sign_in
+  # https://ad96-153-212-244-139.ngrok-free.app/users/sign_in
+  # https://line-text-d66b83e480a5.herokuapp.com/users/auth/line/callback コールバッグメモ
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -29,6 +36,4 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-
-
 end
