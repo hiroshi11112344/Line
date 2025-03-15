@@ -4,7 +4,7 @@
   <div class="sessions-new-box">
     <div class="profile-card">
       <!-- 🔹 プロフィール画像 -->
-      <% if @profile.profile_image.attached? %>
+      <% if @profile && @profile.profile_image.attached? %>
         <img src="<%= url_for(@profile.profile_image) %>" alt="プロフィール画像" class="profile-image">
       <% else %>
         <p>画像なし</p>

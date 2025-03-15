@@ -31,13 +31,13 @@ class UserController < ApplicationController
 
     if params[:profile][:profile_image].present?
       @profile.profile_image.attach(params[:profile][:profile_image])
+      @profile.save
     elsif @profile.profile_image.blank? && current_user.image.present?
       downloaded_image = URI.open(current_user.image)
       @profile.profile_image.attach(io: downloaded_image, filename: "line_profile.jpg", content_type: "image/jpeg")
+      @profile.save
     end
 
-    @profile.save! 
-    
     if @profile.save
       redirect_to confirm_user_path
     else
