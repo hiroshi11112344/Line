@@ -35,14 +35,13 @@ class UserController < ApplicationController
       downloaded_image = URI.open(current_user.image)
       @profile.profile_image.attach(io: downloaded_image, filename: "line_profile.jpg", content_type: "image/jpeg")
     end
-  
+
+    @profile.save! 
+    
     if @profile.save
       redirect_to confirm_user_path
     else
       flash.now[:alert] = @profile.errors.full_messages.join(", ")  # 🔹 エラーメッセージを表示
-      puts "=== デバッグ情報 ==="
-       puts "保存エラー: #{@profile.errors.full_messages}"
-      puts "================="
        render :new
     end
 
