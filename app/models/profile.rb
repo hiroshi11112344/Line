@@ -12,8 +12,6 @@ class Profile < ApplicationRecord
 
   validates :has_partner, inclusion: { in: [true, false] } # 🔹 true/false のみ許可　(恋人)
 
-  has_one_attached :profile_image  # Active Storage 用の設定
-
   private
   def generate_unique_id
     self.unique_id ||= SecureRandom.hex(4) # 8桁のランダムID生成

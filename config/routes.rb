@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   get "/user/confirm", to: 'user#confirm', as: :confirm_user
 
-  # https://ad96-153-212-244-139.ngrok-free.app/users/sign_in
+  # https://ce33-240a-61-1c7-a03f-6870-fe0f-426c-e694.ngrok-free.app/users/sign_in
   # https://line-text-d66b83e480a5.herokuapp.com/users/auth/line/callback コールバッグメモ
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
