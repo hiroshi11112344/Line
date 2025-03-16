@@ -29,8 +29,18 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
           image: @omniauth["info"]["image"]
         )
       end
+
+      # Profileを作成
+      unless @user.profile
+        @user.create_profile!(
+          unique_id: SecureRandom.hex(4),
+          has_partner: false
+        )
+      end
+
       @user.set_values(@omniauth)
       sign_in(:user, @user)
+      
       #　無限ループを防ぐ
       if request.path != confirm_user_path
         if @user.profile&.id.present?
