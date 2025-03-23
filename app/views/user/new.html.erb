@@ -2,7 +2,7 @@
 <body>
   <div class="sessions-new-container">
     <div class="sessions-new-box">
-      <h5>新規登録</5>
+      <div class="taitel"> <h5>新規登録</5> </div>
       <% if user_signed_in? %>
         <img src="<%= current_user.image %>" alt="LINEプロフィール画像" class="profile-image">
         <div class="profile-name"><%= current_user.name %> さん</div>
@@ -12,7 +12,7 @@
         
         <div class="birthdate-wrapper">
           <div class="birthdate-box">
-            <%= f.text_field :birth_year, required: true, class: "birth-input"%><span>年</span>
+            <%= f.text_field :birth_year, required: true, class: "birth-input birth-year-input"%><span>年</span>
             <%= f.text_field :birth_month, required: true, class: "birth-input"%><span>月</span>
             <%= f.text_field :birth_day, required: true, class: "birth-input"%><span>日</span>
           </div>
