@@ -1,11 +1,23 @@
+.taitel{
+  transform: translateY(-100%);
+}
+
+.taitel_confirm{
+  transform: translateY(70%);
+}
+
+.sessions-new-box {
+  min-height: 60vh; /* 中のボックスの高さを大きくする */
+  height: 100%;
+}
+
 .birthdate-wrapper {
   display: flex;
   justify-content: center;  /* 横方向の中央揃え */
-  align-items: center;      /* 縦方向の中央揃え */
   width: 100%;
   margin-top: 20px;
+  margin-left: -5%;
 }
-
 
 /* 年・月・日を横並びにする */
 .birthdate-box {
@@ -16,8 +28,8 @@
 
 /* 正方形の入力ボックス */
 .birth-input {
-  width: 50px;  /* 幅を固定 */
-  height: 50px; /* 高さを固定 */
+  width: 40px;  /* 幅を固定 */
+  height: 35px; /* 高さを固定 */
   text-align: center;
   font-size: 18px;
   border: 1px solid #aaa;
@@ -30,18 +42,23 @@
   font-size: 18px;
 }
 
+/*「年」のボックスだけ横長に*/
+.birth-year-input {
+  width: 60px; /* 幅を広げる */
+}
+
 .profile-image {
+  margin-top: 40%;
   width: 150px;  /* 画像の幅 */
   height: 150px; /* 画像の高さ */
   border-radius: 50%; /* 🔹 画像を円形にする */
   object-fit: cover; /* 🔹 画像をトリミングして中央に表示 */
   display: block;
-  margin-left: 10%
 }
 
 .profile-name {
-  transform: translateY(-150%);
-  margin-left: 50%;
+  transform: translateY(-400%);
+  margin-left: 60%;
 }
 
 .btn.btn-primary{
@@ -67,11 +84,11 @@
 
 .btn-secondary {
   display: block;
-  width: 76%;
+  width: 82%;
   height: 4%;
   max-width: 400px;
   min-width: 150px;
-  margin: 8% auto;
+  margin: 14% auto;
   padding: 10px;
   border-radius: 5px;
   text-align: center;

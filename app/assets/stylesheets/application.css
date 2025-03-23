@@ -21,17 +21,16 @@
   height: 100vh; /* 画面全体の高さを使用 */
 }
 
-
 /* 四角いコンテナ（ボタンが中央に来るよう調整） */
 .sessions-new-box {
   background-color: white;
   padding: 40px;
   border-radius: 16px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
-  width: 65%;
-  max-width: 500px;
-  height: 50vh; /* コンテナの高*/
-  max-height: 600px;
+  width: 35%;
+  max-width: 400px;
+  height: 55vh; /* コンテナの高*/
+  max-height: 800px;
   display: flex; /* 🔹 フレックスボックスを使用 */
   flex-direction: column; /* 🔹 縦方向に配置 */
   justify-content: center; /* 🔹 縦方向の中央配置 */
@@ -58,3 +57,4 @@
 .sessions-new-btn:hover {
   background-color: #03c654;
 }
+
