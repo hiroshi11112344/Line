@@ -48,7 +48,6 @@
 }
 
 .profile-image {
-  margin-top: 40%;
   width: 150px;  /* 画像の幅 */
   height: 150px; /* 画像の高さ */
   border-radius: 50%; /* 🔹 画像を円形にする */
