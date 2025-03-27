@@ -1,10 +1,9 @@
 <div class="sessions-new-container">
   <div class="sessions-new-box">
     <div class="taitel_confirm"><h5>aaaa</h5></div>
-    <div class="profile-card">
       <!-- 🔹 プロフィール画像 -->
       <% if current_user.image.present? %>
-        <img src="<%= current_user.image %>" alt="LINEプロフィール画像" class="profile-image">
+        <img src="<%= current_user.image %>" alt="LINEプロフィール画像" class="profile-image" style="margin-top: 40%;">
       <% else %>
         <p>画像なし</p>
       <% end %>
@@ -18,6 +17,5 @@
       <%= button_to "登録", expendable_items_path, method: :post, class: "btn btn-primary btn-primary_2" %>
       <!-- 修正ページへ戻るリンク -->
       <%= link_to "戻る", expendable_items_path, class: "btn-secondary" %>
-    </div>
   </div>
 </div>
