@@ -40,5 +40,17 @@ class UserController < ApplicationController
   def confirm
     @profile = current_user.profile || current_user.create_profile!(unique_id: SecureRandom.hex(4), has_partner: false)
   end
+
+  def confirm_messes
+    @profile = current_user.profile
+    # 確認ボタン押したら、プロフィールテーブルcompleted: true
+    if @profile.update(completed: true)
+      redirect_to thank_you_path, notice:
+    else
+      redirect_to confirm_user_path
+    end
+  end
   
+  def thank_you
+  end
 end
