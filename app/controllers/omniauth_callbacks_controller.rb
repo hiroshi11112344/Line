@@ -41,13 +41,10 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       @user.set_values(@omniauth)
       sign_in(:user, @user)
       
-      #　無限ループを防ぐ
-      if request.path != confirm_user_path
-        if @user.profile&.id.present?
-          redirect_to confirm_user_path
-        else
-          redirect_to expendable_items_path
-        end
+      if @user.profile.completed?
+        redirect_to confirm_user_path
+      else
+        redirect_to expendable_items_path
       end
     end
   end
