@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get "messages/thank_you"
-
+  
   devise_for :users, controllers: {
     omniauth_callbacks: "omniauth_callbacks"
-  }, skip: [:passwords, :registrations] #明日おかしかったら消す
+  }, skip: [:passwords, :registrations]
 
   # 🔹 Deviseのログインページをrootに設定（エラー回避）
   devise_scope :user do
@@ -16,13 +15,20 @@ Rails.application.routes.draw do
     end
   end
 
+  # 証人画面 > 新規ページ
   get "/user/new", to: 'user#new', as: :expendable_items
 
-  patch 'users/update_or_create', to: 'user#update_or_create', as: 'update_or_create_user'
-
+  # 新規作成ページから入力データを読み込みテーブルに保存
+  patch 'users/update_or_create', to: 'user#update_or_create', as: 
+  'update_or_create_user'
+  # 新規ページ > プロフィール作成確認ページ
   get "/user/confirm", to: 'user#confirm', as: :confirm_user
+  # 確認ページ確認ボタン押した後、プロフィールテーブルcomplete: ture
+  patch "user/confirm_messes", to: "user#confirm_messes", as: :complete_profile
+  # プロフィール確認ページ > メッセージページ
+  get "user/thank_you", to: "user#thank_you", as: :thank_you
 
-  # https://85f6-153-222-142-57.ngrok-free.app/users/sign_in
+  # https://c108-153-222-142-57.ngrok-free.app/users/sign_in
   # https://line-text-d66b83e480a5.herokuapp.com/users/auth/line/callback コールバッグメモ
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
