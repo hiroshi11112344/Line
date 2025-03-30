@@ -1,21 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree 
- *= require_self 
- */
- 
-
-.sessions-new-container {
+.sessions-new-container_message {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,14 +6,14 @@
 }
 
 /* 四角いコンテナ（ボタンが中央に来るよう調整） */
-.sessions-new-box {
+.sessions-new-box_message {
   background-color: white;
   padding: 40px;
   border-radius: 16px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
   width: 35%;
   max-width: 400px;
-  height: 55vh; /* コンテナの高*/
+  height: 35vh; /* コンテナの高*/
   max-height: 800px;
   display: flex; /* 🔹 フレックスボックスを使用 */
   flex-direction: column; /* 🔹 縦方向に配置 */
@@ -38,8 +21,19 @@
   
 }
 
-/* ボタン */
-.sessions-new-btn {
+.site-logo {
+  width: 50px;  /*ロゴの横幅*/
+  height: auto;  /* 高さを自動調整 */
+  display: block; /* marginの調整が効きづらいのでblock*/
+  margin: 0 auto; /*中央揃え*/
+}
+
+.thank_you {
+  margin: 10% auto 0; 
+  text-align: center;/*テキスト中央揃え*/
+}
+
+.btn.btn-primary{
   width: 90%; /* 🔹 幅を親要素の70%に */
   max-width: 400px;
   min-width: 150px;
@@ -49,11 +43,10 @@
   background-color: #b2d8b2; /* 🔹 薄緑色 */
   color: white; /* 🔹 フォントの色を白 */
   border: none; /* 🔹 ボーダーを削除 */
-  border-radius: 8px; /* 🔹 角を丸く */
+  border-radius: 5px; /* 🔹 角を丸く */
   cursor: pointer; /* 🔹 ホバー時にカーソルをポインターに */
-}
-
-/* ホバー時のエフェクト */
-.sessions-new-btn:hover {
-  background-color: #03c654;
+  position: relative;
+  top: 4vh; /* 🔹 画面の高さの4%分下げる */
+  padding: 10px;
+  
 }

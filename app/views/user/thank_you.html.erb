@@ -1,2 +1,17 @@
-<h1>Messages#thank_you</h1>
-<p>Find me in app/views/messages/thank_you.html.erb</p>
+<%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+<div class="sessions-new-container_message">
+  <div class="sessions-new-box_message" style="height: 45vh">
+    <%= image_tag "logo.png", class: "site-logo" %>
+    <div class="thank_you">
+      <p class="indent-text">ありがとうございます</p>
+      <p>アカウントの登録が完了しました</p>
+    </div>
+
+    <%= button_to "マイページ", complete_profile_path, method: :patch, class: "btn btn-primary" %>
+  </div>
+</div>
+
+<P>やることリスト</P>
+<p>画像のイメージ図用意と学習</p>
+<p>独自のCSSファイル作成、ボタンのスタイル</p>
+<p>全体的にスタイルの調整</p>
