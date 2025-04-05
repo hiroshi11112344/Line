@@ -51,7 +51,7 @@
   border-radius: 5px; /* 🔹 角を丸く */
   cursor: pointer; /* 🔹 ホバー時にカーソルをポインターに */
   position: relative;
-  top: 4vh; /* 🔹 画面の高さの4%分下げる */
+  margin-top: 24px;
   padding: 10px;
   
 }
