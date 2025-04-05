@@ -80,8 +80,8 @@ Rails.application.configure do
   # config.generators.apply_rubocop_autocorrect_after_generate!
 
   #heroku用
-  # config.hosts << "line-text-d66b83e480a5.herokuapp.com"
+   # config.hosts << "line-text-d66b83e480a5.herokuapp.com"
 
   #開発用
-  config.hosts << "ce33-240a-61-1c7-a03f-6870-fe0f-426c-e694.ngrok-free.app"
+   config.hosts << "4430-153-222-142-57.ngrok-free.app"
 end

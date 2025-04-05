@@ -47,7 +47,7 @@ class UserController < ApplicationController
     if @profile.update(completed: true)
       redirect_to thank_you_path, notice:
     else
-      redirect_to confirm_user_path
+      redirect_to mypage_path
     end
   end
   
