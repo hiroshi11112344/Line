@@ -1,6 +1,7 @@
-<div class="sessions-new-container">
-  <div class="sessions-new-box">
-    <div class="taitel_confirm"><h5>aaaa</h5></div>
+<body>
+  <div class="sessions-confirm-container">
+    <div class="sessions-confirm-box">
+      <div class="taitel_confirm"><h5>確認</h5></div>
       <!-- 🔹 プロフィール画像 -->
       <% if current_user.image.present? %>
         <img src="<%= current_user.image %>" alt="LINEプロフィール画像" class="profile-image" style="margin-top: 40%;">
@@ -11,12 +12,17 @@
       <!-- ユーザー名 -->
       <div class="profile-name"><%= current_user.name %></div>
       <!-- 生年月日 -->
-      <p><strong>生年月日</strong></p> <p><%= @profile.birthdate.strftime("%Y年 %m月 %d日") if @profile.birthdate %></p>
+      <p class="birth-label"><strong>生年月日</strong></p>
+      <p><%= @profile.birthdate.strftime("%Y年 %m月 %d日") if @profile.birthdate %></p>
 
       <!-- 確認ボタン -->
       <%= button_to "登録", complete_profile_path, method: :patch, class: "btn btn-primary btn-primary_2" %>
 
       <!-- 修正ページへ戻るリンク -->
       <%= link_to "戻る", expendable_items_path, class: "btn-secondary" %>
+
+      <!-- メッセージ -->
+      <div class="message_log"><p>aaaaaaaaaaa</p></div>
+    </div>
   </div>
-</div>
+</body>
