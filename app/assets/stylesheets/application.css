@@ -14,13 +14,11 @@
  *= require_self 
  */
  
-
-.sessions-new-container {
+ .sessions-new-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  height: 100vh; /* 画面全体の高さを使用 */
+  min-height: 95vh;
   padding: 20px; /* ボックスの影や余白に対応 */
   box-sizing: border-box; /* paddingを含めたサイズ計算 */
 }
