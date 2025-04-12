@@ -7,9 +7,8 @@
         <img src="<%= current_user.image %>" alt="LINEプロフィール画像" class="profile-image">
         <div class="profile-name"><%= current_user.name %> さん</div>
       <%end%> 
-      
+      <p class="new_birth-label"><strong>生年月日</strong></p>
       <%= form_with model: current_user.profile, url: update_or_create_user_path, method: :patch do |f| %>
-        
         <div class="birthdate-wrapper">
           <div class="birthdate-box">
             <%= f.text_field :birth_year, required: true, class: "birth-input birth-year-input"%><span>年</span>
