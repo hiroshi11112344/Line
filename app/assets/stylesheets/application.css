@@ -16,12 +16,13 @@
  */
  
  .sessions-new-container {
+  margin: 0;
+  padding: 5;
+  
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 95vh;
-  padding: 10px; /* ボックスの影や余白に対応 */
-  box-sizing: border-box; /* paddingを含めたサイズ計算 */
+  justify-content: center; /* 横方向の中央 */
+  align-items: center;     /* 縦方向の中央 */
+  
 }
 
 /* 四角いコンテナ（ボタンが中央に来るよう調整） */
@@ -39,7 +40,7 @@
   flex-direction: column; /* 🔹 縦方向に配置 */
   justify-content: center; /* 🔹 縦方向の中央配置 */
   box-sizing: border-box;
-  /*一応高さ自動調整入れておく　小要素*/
+  /*一応横と高さ自動調整入れておく　小要素*/
   height: auto;
 }
 
