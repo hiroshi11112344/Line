@@ -12,6 +12,7 @@
  *
  *= require_tree 
  *= require_self 
+ *= require mypages/show
  */
  
  .sessions-new-container {
@@ -19,26 +20,27 @@
   justify-content: center;
   align-items: center;
   min-height: 95vh;
-  padding: 20px; /* ボックスの影や余白に対応 */
+  padding: 10px; /* ボックスの影や余白に対応 */
   box-sizing: border-box; /* paddingを含めたサイズ計算 */
 }
 
 /* 四角いコンテナ（ボタンが中央に来るよう調整） */
 .sessions-new-box {
   background-color: white;
-  padding: 40px;
+  padding: 45px;
   border-radius: 16px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
-  width: 35%;
-  max-width: 400px; /* 最大でも400pxまで広がるようにする */
-  min-width: 280px; /* 最低でも280pxは確保（狭すぎ防止） */
+  width: 100%; 
+  max-width: 350px; /* 最大でも400pxまで広がるようにする */
   min-height: 55vh;/* 最低限の高さを確保して見た目を整える */
   height: auto; /*これが親コンテナにあることによって中にある要素が自動で小さくなったり大きなったりする。画面が小さくなれば自動でなくなったりもする*/
   max-height: 750px;
   display: flex; /* 🔹 フレックスボックスを使用 */
   flex-direction: column; /* 🔹 縦方向に配置 */
   justify-content: center; /* 🔹 縦方向の中央配置 */
-  
+  box-sizing: border-box;
+  /*一応高さ自動調整入れておく　小要素*/
+  height: auto;
 }
 
 /* ボタン */

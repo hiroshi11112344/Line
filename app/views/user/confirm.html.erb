@@ -16,10 +16,10 @@
       <p><%= @profile.birthdate.strftime("%Y年 %m月 %d日") if @profile.birthdate %></p>
 
       <!-- 確認ボタン -->
-      <%= button_to "登録", complete_profile_path, method: :patch, class: "btn btn-primary btn-primary_2" %>
+      <%= button_to "登録", complete_profile_path, method: :patch, class: "btn btn_confirm_primary btn confirm_primary_2" %>
 
       <!-- 修正ページへ戻るリンク -->
-      <%= link_to "戻る", expendable_items_path, class: "btn-secondary" %>
+      <%= link_to "戻る", expendable_items_path, class: "btn btn_confirm_secondary" %>
 
       <!-- メッセージ -->
       <div class="message_log"><p>aaaaaaaaaaa</p></div>

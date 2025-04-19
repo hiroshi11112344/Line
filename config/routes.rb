@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   resource :mypage, only: [:show]
 
 
-  # https://4430-153-222-142-57.ngrok-free.app/users/sign_in
+  # https://6c9c-153-222-142-57.ngrok-free.app/users/sign_in
   # https://line-text-d66b83e480a5.herokuapp.com/users/auth/line/callback コールバッグメモ
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

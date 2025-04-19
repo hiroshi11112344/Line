@@ -1,0 +1,59 @@
+.sessions-show-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 95vh;
+  padding: 20px; /* ボックスの影や余白に対応 */
+  box-sizing: border-box; /* paddingを含めたサイズ計算 */
+  flex-direction: column; /* 🔹 縦方向に配置 */
+}
+/**/
+/*メッセージ*/
+.show_messges_box {
+  background-color: white;  /*背景*/
+  padding: 40px;  /*ボックスの内側に余白子要素が端っこにいきすぎない用*/
+  border-radius: 16px; /*boxの角を丸く*/
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1); /*box薄い影 を付けて、浮き上がって見えるようにします*/
+  width: 35%; /*横幅を 親要素の35%*/
+  max-width: 400px; /*最大値設定、画面が大きくなった時広がりすぎないようにする*/
+  min-width: 280px; /* 最低でも280pxは確保（狭すぎ防止） */
+  height: auto; /*中に入るこ要素によって高さ自動調整　レイアウトのずれを防止*/
+  min-height: 200px;
+  display: flex; /* 🔹 フレックスボックスを使用 */
+  margin-bottom: 30px;
+}
+
+/*プロフィール*/
+.show_box {
+  background-color: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+  width: 35%;
+  max-width: 400px; /* 最大でも400pxまで広がるようにする */
+  min-width: 280px; /* 最低でも280pxは確保（狭すぎ防止） */
+  min-height: 400px;/* 最低限の高さを確保して見た目を整える */
+  height: auto; /*中に入るこ要素によって高さ自動調整　レイアウトのずれを防止*/
+  max-height: 750px;
+  display: flex; /* 🔹 フレックスボックスを使用 */
+}
+
+.myProfile_row {
+  display: flex; /* 横並びにする */
+  align-items: center; /* 縦中央に揃える！ */
+  gap: 20px; /* 画像と名前の間にスペース */
+  margin-bottom: 4px; 
+  justify-content: left;
+}
+
+.myName {
+  position: relative;
+  top: 0px; /* 実際の見た目を見て調整してね！ */
+  left: 0px;
+}
+
+.myProfile_image {
+  width: 130px;  /* 画像の幅 */
+  height: 130px; /* 画像の高さ */
+  border-radius: 50%; /* 🔹 画像を円形にする */
+}
