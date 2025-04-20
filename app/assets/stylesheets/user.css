@@ -106,6 +106,7 @@
   background: #f8f9fa;
   color: #000;
   font-size: 14px;
+  margin-bottom: 4px; 
 }
 
 .new_birth-label{
@@ -151,7 +152,7 @@
   .sessions-confirm-box {
     width: 100%;
     max-width: 340px;
-    padding: 30px;
+    padding: 10px 10px;
     box-sizing: border-box;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
   }
@@ -185,14 +186,13 @@ p {
   cursor: pointer; /* 🔹 ホバー時にカーソルをポインターに */
   position: relative;
   top: 4vh; /* 🔹 画面の高さの4%分下げる */
-  padding: 10px;
   font-size: 15px;
+  padding: 10px;
 }
 
 .btn.btn_confirm_secondary {
   display: block;
   width: 94%;
-  height: 4%;
   max-width: 400px;
   min-width: 150px;
   margin: 40px auto 0;
