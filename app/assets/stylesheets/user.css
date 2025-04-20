@@ -9,11 +9,32 @@
   left: -10px;
 }
 
+@media screen and (max-width: 480px) {
+  .profile-image {
+    width: 100px;  /* 画像の幅 */
+    height: 100px; /* 画像の高さ */
+    border-radius: 50%; /* 🔹 画像を円形にする */
+    object-fit: cover; /* 🔹 画像をトリミングして中央に表示 */
+    display: block;
+    position: relative;
+    left: -10px;
+  }
+}
+
 
 .profile-name {
   position: relative;
   top: -80px; /* 実際の見た目を見て調整してね！ */
   left: 155px;
+}
+
+@media screen and (max-width: 480px) {
+  .profile-name {
+    position: relative;
+    top: -80px; /* 実際の見た目を見て調整してね！ */
+    left: 155px;
+    font-size: 12px;
+  }
 }
 
 .btn.btn-primary{
@@ -120,7 +141,7 @@
 /*ーーーーーーーーーーー確認ページーーーーーーーーーー*/
 .sessions-confirm-container {
   margin: 0;
-  padding: 10;
+  padding: 5;
   height: 95vh;
   display: flex;
   justify-content: center; /* 横方向の中央 */
@@ -146,6 +167,15 @@
   /*一応高さ自動調整入れておく　小要素*/
   height: auto;
   
+}
+
+@media screen and (max-width: 480px) {
+  .sessions-confirm-box {
+    width: 100%;
+    max-width: 350px;
+    padding: 30px;
+    box-sizing: border-box;
+  }
 }
 
 .taitel_confirm{

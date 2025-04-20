@@ -1,6 +1,6 @@
 .sessions-new-container_message {
   margin: 0;
-  padding: 10;
+  padding: 5;
   height: 95vh;
   display: flex;
   justify-content: center; /* 横方向の中央 */
@@ -25,7 +25,15 @@
   /*一応高さ自動調整入れておく　小要素*/
   height: auto;
   overflow-x: hidden;
-  
+}
+
+@media screen and (max-width: 480px) {
+  .sessions-new-box_message {
+    width: 100%;
+    max-width: 350px;
+    padding: 30px;
+    box-sizing: border-box;
+  }
 }
 
 .site-logo {
