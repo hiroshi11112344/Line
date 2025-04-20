@@ -47,9 +47,10 @@
 @media screen and (max-width: 480px) {
   .sessions-new-box {
     width: 100%;
-    max-width: 350px;
+    max-width: 340px;
     padding: 30px;
     box-sizing: border-box;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
   }
 }
 

@@ -30,7 +30,7 @@
 @media screen and (max-width: 480px) {
   .sessions-new-box_message {
     width: 100%;
-    max-width: 350px;
+    max-width: 340px;
     padding: 30px;
     box-sizing: border-box;
   }
