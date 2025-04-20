@@ -121,6 +121,7 @@
 .sessions-confirm-container {
   margin: 0;
   padding: 5;
+  height: 95vh;
   display: flex;
   justify-content: center; /* 横方向の中央 */
   align-items: center;     /* 縦方向の中央 */
