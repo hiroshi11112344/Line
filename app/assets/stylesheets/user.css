@@ -120,11 +120,12 @@
 /*ーーーーーーーーーーー確認ページーーーーーーーーーー*/
 .sessions-confirm-container {
   margin: 0;
-  padding: 5;
+  padding: 10;
   height: 95vh;
   display: flex;
   justify-content: center; /* 横方向の中央 */
   align-items: center;     /* 縦方向の中央 */
+  overflow-x: hidden;
 }
 
 /* 四角いコンテナ（ボタンが中央に来るよう調整） */

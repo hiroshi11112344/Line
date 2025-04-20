@@ -1,6 +1,6 @@
 .sessions-new-container_message {
   margin: 0;
-  padding: 5;
+  padding: 10;
   height: 95vh;
   display: flex;
   justify-content: center; /* 横方向の中央 */
@@ -24,6 +24,7 @@
   box-sizing: border-box;
   /*一応高さ自動調整入れておく　小要素*/
   height: auto;
+  overflow-x: hidden;
   
 }
 

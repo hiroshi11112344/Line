@@ -17,7 +17,7 @@
  
  .sessions-new-container {
   margin: 0;
-  padding: 5;
+  padding: 10;
   height: 95vh;
   display: flex;
   justify-content: center; /* 横方向の中央 */
