@@ -47,7 +47,7 @@
   .sessions-new-box {
     width: 100%;
     max-width: 340px;
-    padding: 30px;
+    padding: 10px;
     box-sizing: border-box;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
   }
