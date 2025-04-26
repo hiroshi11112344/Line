@@ -1,12 +1,19 @@
 /*-----------共通-------------*/
 .profile-image {
-  width: 125px;  /* 画像の幅 */
-  height: 125px; /* 画像の高さ */
+  width: 130px;  /* 画像の幅 */
+  height: 130px; /* 画像の高さ */
   border-radius: 50%; /* 🔹 画像を円形にする */
   object-fit: cover; /* 🔹 画像をトリミングして中央に表示 */
   display: block;
   position: relative;
   left: -5px;
+}
+
+@media screen and (max-width: 480px) {
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
 }
 
 .profile-name {
@@ -53,8 +60,8 @@
 /*ーーーーーーーー新規登録ーーーーーーーーー*/
 .new-container_user {
   margin: 0;
-  padding: 10;
-  height: 95.1vh;
+  padding: 20px;
+  height: 95vh;
   display: flex;
   justify-content: center; /* 横方向の中央 */
   align-items: center;     /* 縦方向の中央 */
@@ -159,7 +166,7 @@
 /*ーーーーーーーーーーー確認ページーーーーーーーーーー*/
 .sessions-confirm-container {
   margin: 0;
-  padding: 5;
+  padding: 20px;
   height: 95vh;
   display: flex;
   justify-content: center; /* 横方向の中央 */
@@ -190,7 +197,7 @@
   .sessions-confirm-box {
     width: 100%;
     max-width: 340px;
-    padding: 10px 10px;
+    padding: 30px;
     box-sizing: border-box;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
   }
