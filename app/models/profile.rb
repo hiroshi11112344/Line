@@ -16,4 +16,27 @@ class Profile < ApplicationRecord
   def generate_unique_id
     self.unique_id ||= SecureRandom.hex(4) # 8桁のランダムID生成
   end
+
+  # 数字　桁数　数字の大きさ
+  # 年
+  validates :birth_year,presence: true,
+    numericality: {
+    only_integer: true,
+    greater_than_or_equal_to: 1000,
+    ess_than_or_equal_to: Date.current.year
+  }
+  # 月
+  validates :birth_month,presence: true,
+  numericality: {
+    only_integer: true,
+    greater_than_or_equal_to: 1,
+    less_than_or_equal_to: 12
+  }
+  # 日
+  validates :birth_day,presence: true,
+  numericality: {
+  only_integer: true,
+  greater_than_or_equal_to: 1,
+  less_than_or_equal_to: 31
+}
 end

@@ -1,7 +1,7 @@
  <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
 <body>
-  <div class="sessions-new-container">
-    <div class="sessions-new-box">
+  <div class="new-container_user">
+    <div class="new-box_user">
       <div class="taitel"> <h5>新規登録</5> </div>
       <% if user_signed_in? %>
         <img src="<%= current_user.image %>" alt="LINEプロフィール画像" class="profile-image">
@@ -11,9 +11,9 @@
       <%= form_with model: current_user.profile, url: update_or_create_user_path, method: :patch do |f| %>
         <div class="birthdate-wrapper">
           <div class="birthdate-box">
-            <%= f.text_field :birth_year, required: true, class: "birth-input birth-year-input"%><span>年</span>
-            <%= f.text_field :birth_month, required: true, class: "birth-input"%><span>月</span>
-            <%= f.text_field :birth_day, required: true, class: "birth-input"%><span>日</span>
+            <%= f.text_field :birth_year, class: "birth-input birth-year-input" %><span>年</span>
+            <%= f.text_field :birth_month, class: "birth-input" %><span>月</span>
+            <%= f.text_field :birth_day, class: "birth-input" %><span>日</span>
           </div>
         </div>
 
