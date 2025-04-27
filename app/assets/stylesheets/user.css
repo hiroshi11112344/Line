@@ -206,7 +206,7 @@
   border-radius: 16px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
   width: 100%; 
-  max-width: 350px; /* 最大でも400pxまで広がるようにする */
+  max-width: 34.9px; /* 最大でも400pxまで広がるようにする */
   /*height: auto; /*これが親コンテナにあることによって中にある要素が自動で小さくなったり大きなったりする。画面が小さくなれば自動でなくなったりもする*/
   max-height: 650px;
   display: flex; /* 🔹 フレックスボックスを使用 */
