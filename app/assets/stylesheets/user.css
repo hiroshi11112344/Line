@@ -25,7 +25,7 @@
 
 @media screen and (max-width: 480px) {
   .profile-name {
-    left: 160px;
+    left: 165px;
 
   }
 }
@@ -75,7 +75,7 @@
 .new-container_user {
   margin: 0;
   padding: 20px;
-  height: 95vh;
+  min-height: 92vh;
   display: flex;
   justify-content: center; /* 横方向の中央 */
   align-items: center;     /* 縦方向の中央 */
@@ -95,7 +95,7 @@
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
   width: 100%; 
   max-width: 350px; /* 最大でも400pxまで広がるようにする */
-  min-height: 55vh;/* 最低限の高さを確保して見た目を整える */
+  min-height: 450px;/* 最低限の高さを確保して見た目を整える */
   height: auto; /*これが親コンテナにあることによって中にある要素が自動で小さくなったり大きなったりする。画面が小さくなれば自動でなくなったりもする*/
   max-height: 750px;
   display: flex; /* 🔹 フレックスボックスを使用 */

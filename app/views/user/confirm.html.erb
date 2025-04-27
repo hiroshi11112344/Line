@@ -4,7 +4,7 @@
       <div class="taitel_confirm"><h5>確認</h5></div>
       <!-- 🔹 プロフィール画像 -->
       <% if current_user.image.present? %>
-        <img src="<%= current_user.image %>" alt="LINEプロフィール画像" class="profile-image">
+        <img src="<%= current_user.image %>" alt="LINEプロフィール画像" class="profile-image" style="margin-top: 30px;">
       <% else %>
         <p>画像なし</p>
       <% end %>
