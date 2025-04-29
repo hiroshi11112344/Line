@@ -2,6 +2,10 @@
   <div class="sessions-show-container">
 
     <div class="show_messges_box">
+      <div class="hare_title"><h5>恋人の申請</h5></div>
+      <p class="hare_line_button">LINEで送信</p>
+      <p class="share_message_label">メッセージ......<p>
+      <p class="share_url">URL。。。。。。。。。。。。。。ああaaaaaaa</p>
     </div>
 
     <div class="show_box">
@@ -14,6 +18,7 @@
           <div class="myName"><%= current_user.name %></div>
         </div>
       </div>
+
       <p class="my_label"><strong>生年月日</strong></p>
       <p><%= @profile.birthdate.strftime("%Y年 %m月 %d日") if @profile.birthdate %></p>
       <p class="my_girlfriend">恋人</p>
