@@ -7,10 +7,18 @@
     <div class="show_box">
       <div class="taitle"><h5>aaaaaa</h5></div>
       <div class="myProfile_row">
-      
-      <img src="<%= current_user.image %>" alt="LINEプロフィール画像" class="myProfile_image">
-        <div class="myName"><%= current_user.name %></div>
+        <img src="<%= current_user.image %>" alt="LINEプロフィール画像" class="myProfile_image">
+        
+        <div class="myProfile_texts">
+          <div class="my_id"><%= @profile.unique_id %></div>
+          <div class="myName"><%= current_user.name %></div>
+        </div>
       </div>
+      <p class="my_label"><strong>生年月日</strong></p>
+      <p><%= @profile.birthdate.strftime("%Y年 %m月 %d日") if @profile.birthdate %></p>
+      <p class="my_girlfriend">恋人</p>
+      <p><%= @profile.has_partner ? "有り" : "なし" %></p>
+
     
     </div>
       

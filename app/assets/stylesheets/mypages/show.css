@@ -56,14 +56,14 @@
   border-radius: 16px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
   width: 100%; 
-  max-width: 350px; /* 最大でも400pxまで広がるようにする */
+  max-width: 350.2px; /* 最大でも400pxまで広がるようにする */
   /*height: auto; /*これが親コンテナにあることによって中にある要素が自動で小さくなったり大きなったりする。画面が小さくなれば自動でなくなったりもする*/
   max-height: 650px;
   display: flex; /* 🔹 フレックスボックスを使用 */
   flex-direction: column;
   box-sizing: border-box;
 }
-
+/*スマホ用プロフィールbox*/
 @media screen and (max-width: 480px) {
   .show_box {
     width: 100%;
@@ -73,7 +73,7 @@
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
   }
 }
-
+/*イメージbox*/
 .myProfile_row{
   display: flex; /* 横並びにする */
   align-items: center; /* 縦中央に揃える！ */
@@ -81,26 +81,36 @@
   margin-bottom: 4px; 
   justify-content: flex-start;
 }
-
+/*ページタイトル*/
 .taitle{
   margin-bottom: 20px;
 }
-
-.myName {
-  position: relative;
-  top: 0px; /* 実際の見た目を見て調整してね！ */
-  left: 0px;
+/* 画像の隣にIDと名前を縦並びで置く */
+.myProfile_texts{
+  flex-direction: column; /*縦に並べる*/
 }
 
+/*自分の写真*/
 .myProfile_image {
   width: 130px;  /* 画像の幅 */
   height: 130px; /* 画像の高さ */
   border-radius: 50%; /* 🔹 画像を円形にする */
 }
-
+/*スマホ用写真*/
 @media screen and (max-width: 480px) {
   .myProfile_image {
     width: 120px;
     height: 120px;
   }
+}
+/* 生年月日 */
+.my_label {
+  font-size: 14px; 
+  margin-top: 30px;
+  margin-bottom: 4px; /* ラベルの下だけちょっと余白 */
+}
+/* 恋人 */
+.my_girlfriend {
+  margin-top: 35px;
+  margin-bottom: 3px;
 }
