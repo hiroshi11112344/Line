@@ -41,9 +41,11 @@
 }
 /*送信ボタン*/
 .hare_line_button {
-  width: 94%; /* 🔹 幅を親要素の100%に */
+  width: 100%; /* 🔹 幅を親要素の100%に */
+  min-height: 55px;
   display: flex; /* 🔹 フレックスボックスを適用 */
   justify-content: center; /* 🔹 テキストを中央揃え */
+  align-items: center;
   margin: auto; /* 🔹 横方向の中央配置 */
   background-color: #57d857; /* 🔹 薄緑色 */
   color: white; /* 🔹 フォントの色を白 */
@@ -51,6 +53,7 @@
   border-radius: 5px; /* 🔹 角を丸く */
   cursor: pointer; /* 🔹 ホバー時にカーソルをポインターに */
   padding: 10px;
+  font-size: 14px;
 }
 /*送信メッセージ*/
 .share_message_label {
@@ -60,7 +63,7 @@
 /*送信URL*/
 .share_url {
   width: 94%;
-  min-height: 55px;
+  min-height: 50px;
   display: flex; /* 🔹 フレックスボックスを適用 */
   text-align: left;/*文字左よせ*/
   align-items: center; /*上下中央よせ*/
