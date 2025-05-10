@@ -5,8 +5,20 @@
       <div class="hare_title"><h5>恋人の申請</h5></div>
       <p class="hare_line_button">LINEで送信</p>
       <p class="share_message_label">メッセージ......<p>
-      <p class="share_url">URL。。。。。。。。。。。。。。ああaaaaaaa</p>
+      <p class="share_url">https://line-text-d66b83e480a5.herokuapp.com</p>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const lineBtn = document.querySelector('.hare_line_button');
+        const shareUrlText = document.querySelector('.share_url');
+
+        lineBtn.addEventListener('click', function () {
+          const rawUrl = shareUrlText.textContent.trim();
+          const lineShareUrl = "https://line.me/R/msg/text/?" + encodeURIComponent(rawUrl);
+          window.open(lineShareUrl);
+        });
+      });
+    </script>
 
     <div class="show_box">
       <div class="taitle"><h5>aaaaaa</h5></div>
