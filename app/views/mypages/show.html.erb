@@ -14,12 +14,16 @@
       
         lineBtn.addEventListener('click', function () {
           const rawUrl = lineBtn.dataset.url;
+          if (!rawUrl || rawUrl.trim() === "") {
+            alert("❌ LINEに送るURLが設定されていません！");
+            return;
+          }
+          alert("これからLINEを開くよ！\n" + rawUrl);
           const lineShareUrl = "line://msg/text/" + encodeURIComponent(rawUrl);
           window.location.href = lineShareUrl;
         });
       });
     </script>
-
     <div class="show_box">
       <div class="taitle"><h5>aaaaaa</h5></div>
       <div class="myProfile_row">
@@ -38,7 +42,9 @@
 
     
     </div>
+    
       
 
   </div>
 </body>
+<%= link_to "http://line.me/R/msg/text/?=#{current_user.name}さんの投稿がシェアされました%0a#{request.url}%0ali" %>
