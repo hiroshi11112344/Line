@@ -57,7 +57,7 @@
 
 .btn-secondary {
   display: block;
-  width: 94%;
+  width: 94.1%;
   height: 4%;
   max-width: 400px;
   min-width: 150px;
@@ -188,6 +188,8 @@
   padding: 20px;
   min-height: 92vh;
   display: flex;
+
+
   justify-content: center; /* 横方向の中央 */
   align-items: center;     /* 縦方向の中央 */
   overflow-y: overlay; /* ★ここ追加！スクロール必要な時だけ出す */
@@ -206,7 +208,7 @@
   border-radius: 16px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
   width: 100%; 
-  max-width: 34.9px; /* 最大でも400pxまで広がるようにする */
+  max-width: 340px; /* 最大でも400pxまで広がるようにする */
   /*height: auto; /*これが親コンテナにあることによって中にある要素が自動で小さくなったり大きなったりする。画面が小さくなれば自動でなくなったりもする*/
   max-height: 650px;
   display: flex; /* 🔹 フレックスボックスを使用 */
@@ -221,7 +223,7 @@
 @media screen and (max-width: 480px) {
   .sessions-confirm-box {
     width: 100%;
-    max-width: 340px;
+    max-width: 339px;
     padding: 20px;
     box-sizing: border-box;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
