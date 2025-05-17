@@ -1,3 +1,4 @@
+<%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
 <body>
   <div class="sessions-show-container">
 
@@ -8,22 +9,7 @@
       <p class="share_message_label">メッセージ......<p>
       <p class="share_url">https://line-text-d66b83e480a5.herokuapp.com</p>
     </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const lineBtn = document.querySelector('.hare_line_button');
-      
-        lineBtn.addEventListener('click', function () {
-          const rawUrl = lineBtn.dataset.url;
-          if (!rawUrl || rawUrl.trim() === "") {
-            alert("❌ LINEに送るURLが設定されていません！");
-            return;
-          }
-          alert("これからLINEを開くよ！\n" + rawUrl);
-          const lineShareUrl = "line://msg/text/" + encodeURIComponent(rawUrl);
-          window.location.href = lineShareUrl;
-        });
-      });
-    </script>
+    <%= javascript_import_module_tag "Line_show" %>
     <div class="show_box">
       <div class="taitle"><h5>aaaaaa</h5></div>
       <div class="myProfile_row">
@@ -47,4 +33,3 @@
 
   </div>
 </body>
-<%= link_to "http://line.me/R/msg/text/?=#{current_user.name}さんの投稿がシェアされました%0a#{request.url}%0ali" %>
