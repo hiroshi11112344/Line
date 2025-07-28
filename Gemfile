@@ -42,7 +42,7 @@ gem 'omniauth-rails_csrf_protection'
 gem 'dotenv-rails'
 
 group :production do
-  gem "pg", "~> 1.4"
+  gem "pg", "~> 1.6"
 end
 
 group :development, :test do
